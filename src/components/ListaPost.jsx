@@ -9,12 +9,11 @@ const ListaPost = ({url}) =>{
     useEffect(()=>{
         busca(url, setPosts)
     }, [url])
-    console.log('oi')
 
     return(
         <section className="posts container">
             {posts.map((post)=>(
-                <Link className={`cartao-post cartao-post--${post.categoria}`} to={`/posts/${posts.id}`}>
+                <Link className={`cartao-post cartao-post--${post.categoria}`} to={`/posts/${post.id}`}>
                     <article className="cartao post" key={post.id}>
                         <h3 className="cartao-post__titulo">{post.title}</h3>
                         <p className="cartao-post__meta">{post.metadescription}</p>
